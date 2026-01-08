@@ -13,9 +13,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Import routes
 const authRoutes = require('./routes/auth');
+const expenseRoutes = require('./routes/expenses');
+const categoryRoutes = require('./routes/categories');
 
 // Use routes
 app.use('/api/auth', authRoutes);
+app.use('/api/expenses', expenseRoutes);
+app.use('/api/categories', categoryRoutes);
 
 // Base route
 app.get('/', (req, res) => {
